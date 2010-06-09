@@ -100,4 +100,10 @@ function next_track()
 	// Increment track counter and update player list and controller
 	gActiveIdx += 1;
 	gPlayer.update_player();
+	
+	update_node_image( gQueue[gActiveIdx-1] );
+	if( gQueue.length > gActiveIdx )
+	{
+		update_node_image( gQueue[gActiveIdx] );
+	}
 } // Player::next_track()

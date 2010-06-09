@@ -37,7 +37,7 @@ function get_song_at_coord( coord )
 	array_side = Math.ceil( Math.sqrt( this.list_length ) );
 	
 	// Get the index of the coordinate in the array
-	index = coord.x * array_side + coord.y + parseInt( this.list_length / 2 );
+	index = coord.x * array_side + coord.y;
 	
 	// If valid, return song
 	if( index >= 0 && index < this.list_length )

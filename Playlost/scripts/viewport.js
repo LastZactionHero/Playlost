@@ -42,10 +42,18 @@ function draw_viewport()
 //
 function draw_grid()
 {
+	list_length = gPlaylist.list_length;
+	square = Math.ceil( Math.sqrt( list_length ) );
+	
+	x_start = 0;
+	x_end = square;
+	y_start = 0;
+	y_end = square;
+	
 	// Loop through grid and draw nodes
-	for( x_posn = -25; x_posn < 25; x_posn++ )
+	for( x_posn = x_start; x_posn < x_end; x_posn++ )
 	{
-		for( y_posn = -25; y_posn < 25; y_posn++ )
+		for( y_posn = y_start; y_posn < y_end; y_posn++ )
 		{
 			grid_node = new Node( new Coord( x_posn, y_posn ), gViewport );
 			grid_node.draw_node();

@@ -12,18 +12,41 @@ function gen_position_string( left, top, width, height )
 // nodes_are_neighbors
 // Determine if two nodes are touching
 //
-function nodes_are_neighbors( coordA, coordB )
-{
-	if( coordA.x == coordB.x + 1 && coordA.y == coordB.y ||
-	   coordA.x == coordB.x && coordA.y == coordB.y + 1 ||
-	   coordA.x == coordB.x + 1 && coordA.y == coordB.y + 1 ||
-	   coordA.x == coordB.x - 1 && coordA.y == coordB.y ||
-	   coordA.x == coordB.x && coordA.y == coordB.y - 1 ||
-	   coordA.x == coordB.x - 1 && coordA.y == coordB.y - 1 )
+function nodes_are_neighbors( start_coord, end_coord )
+{	
+	if( start_coord.y > end_coord.y )
 	{
-		return 1;
+		temp = start_coord;
+		start_coord = end_coord;
+		end_coord = temp;
 	}
-	return 0;
+	
+	if( is_even( start_coord.y ) )
+	{
+		if( ( start_coord.x == end_coord.x		&&	start_coord.y == end_coord.y + 2	) ||
+			( start_coord.x == end_coord.x		&&	start_coord.y == end_coord.y + 1	) ||
+			( start_coord.x == end_coord.x		&&	start_coord.y == end_coord.y - 1	) ||
+			( start_coord.x == end_coord.x		&&	start_coord.y == end_coord.y - 2	) ||
+			( start_coord.x == end_coord.x + 1	&&	start_coord.y == end_coord.y - 1	) ||
+			( start_coord.x == end_coord.x + 1	&&	start_coord.y == end_coord.y + 1 ) )
+		{
+			return true;
+		}
+	}
+	else
+	{
+		if( ( start_coord.x == end_coord.x		&& start_coord.y == end_coord.y + 2		) ||
+			( start_coord.x == end_coord.x - 1	&& start_coord.y == end_coord.y - 1		) ||
+			( start_coord.x == end_coord.x - 1	&& start_coord.y == end_coord.y + 1		) ||
+			( start_coord.x == end_coord.x		&& start_coord.y == end_coord.y - 2		) ||
+			( start_coord.x == end_coord.x		&& start_coord.y == end_coord.y - 1		) ||
+			( start_coord.x == end_coord.x		&& start_coord.y == end_coord.y + 1	) )
+		{
+			return true;
+		}
+	}
+
+	return false;
 } // nodes_are_neighbors()
 
 
@@ -52,3 +75,12 @@ function is_node_active( coord )
 {
 	return ( coord.x == gQueue[gActiveIdx].x && coord.y == gQueue[gActiveIdx].y );
 } // is_node_active()
+
+
+//
+// is_even
+//
+function is_even( value )
+{
+	return ( value / 2 ) == parseInt( ( value / 2 ) )
+}
