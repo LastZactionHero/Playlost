@@ -1,0 +1,66 @@
+body 
+  { 
+  background-color: #FFFFFF; 
+  font-family: Verdana;
+  }
+  
+.box_debug
+  {
+  position: absolute;
+  overflow: scroll;
+  top: 0px;
+  left: 0px;
+  height: 100px;
+  width: 200px;
+  }
+  
+.box_viewer
+  {
+  position: absolute;
+  background-color: #DDDDDD;
+  overflow: scroll;
+  z-index:0;
+  }
+  
+.box_player_list
+  {
+  position: absolute;
+  background-color: #DDDDDD;
+  overflow: scroll;
+  z-index:0;
+  font-family: Verdana;
+  font-size: 10px;
+  }
+  
+.box_player_controller
+  {
+  position: absolute;
+  background-color: #DDDDDD;
+  overflow: hidden;
+  z-index:0;
+  font-family: Verdana;
+  font-size: 10px;
+  }
+  
+  .box_node
+  {
+  position: absolute;
+  overflow: show;
+  color: white;
+  font-family: Verdana;
+  font-size: 10px;
+  background-color: #AAAAAA;
+  text-align: center;
+  z-index:2;
+  }
+  
+.box_node_image
+  {
+  position: absolute;
+  overflow: show;
+  color: yellow;
+  font-family: Verdana;
+  font-size: 8px;
+  text-align: center;
+  z-index:3;
+  }

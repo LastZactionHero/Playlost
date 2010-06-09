@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Playlost Viewer 0.1</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/viewer.css">
+		
+		<script type="text/javascript" src="scripts/globals.js"></script>
+		<script type="text/javascript" src="scripts/coord.js"></script>
+		<script type="text/javascript" src="scripts/autogen_playlist.js"></script>
+		<script type="text/javascript" src="scripts/playlist.js"></script>
+		<script type="text/javascript" src="scripts/viewport.js"></script>
+		<script type="text/javascript" src="scripts/player.js"></script>
+		<script type="text/javascript" src="scripts/utility.js"></script>
+		<script type="text/javascript" src="scripts/node.js"></script>	
+		
+		<script type="text/javascript">
+			
+			//
+			// Startup and initialization
+			//
+			function startup()
+			{
+				gPlaylist = new Playlist();
+				gQueue = new Array();
+				gQueue[0] = new Coord(0, 0);
+				gViewport = new Viewport();
+				gViewport.draw_viewport();
+				gPlayer = new Player();
+				gPlayer.draw_player();
+				gPlayer.update_player();
+			} // startup()
+			
+		</script>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			startup();
+		</script>
+	</body>
+	
+</html>
