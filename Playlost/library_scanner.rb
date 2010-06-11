@@ -107,7 +107,7 @@ mp3_filename_array.each{ |mp3_filename|
     puts "Song Error! Skipping"
   end
 
-  puts mp3_idx + " of " + mp3_filename_array.length + "\n"
+  puts mp3_idx.to_s + " of " + mp3_filename_array.length.to_s + "\n"
   puts "Title: #{title}\nArtist:#{artist}\nAlbum:#{album}\n\n\n"
   
   if album

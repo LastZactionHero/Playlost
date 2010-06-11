@@ -11,7 +11,7 @@
 	<key>IsDroppable</key>
 	<false/>
 	<key>OutputType</key>
-	<string>Web View</string>
+	<string>Text Window</string>
 	<key>RemainRunningAfterCompletion</key>
 	<true/>
 	<key>RequiresAdminPrivileges</key>
