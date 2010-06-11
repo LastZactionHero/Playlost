@@ -12,7 +12,7 @@ function Player()
 	// Variables
 	this.top = 20;
 	this.left = gViewport.left + gViewport.width + 20;
-	this.width = window.innerWidth - this.left - 20;
+	this.width = window.innerWidth - this.left - 36;
 	this.height = window.innerHeight - 40 - 40;
 } // Player
 
@@ -57,20 +57,38 @@ function update_player_list()
 	
 	for( i = 0; i < gQueue.length; i++ )
 	{
-		trackColor = "black";
+		trackColor = "white";
 		if( gActiveIdx == i )
 		{
 			trackColor = "blue";
 		}
 		
 		player_html += "<p style=\"color:" + trackColor + ";\">";
+		player_html += "<a onclick=\"javascript:set_track(" + i + ")\">"
 		song_coord = gQueue[i];
 		song = gPlaylist.get_song_at_coord( gQueue[i] );
-		player_html += i+1 + ": " + song.name + "-" + song.artist + "</p>";
+		player_html += i+1 + ": " + song.name + "-" + song.artist + "</a></p>";
 	}
 	
 	document.getElementById( 'div_playlist_list' ).innerHTML = player_html;
 } // Player::update_player_list()
+
+
+//
+// Player::set_track()
+//
+function set_track( track_idx )
+{
+	gActiveIdx = track_idx;
+  
+	gPlayer.update_player();
+	
+	update_node_image( gQueue[gActiveIdx-1] );
+	if( gQueue.length > gActiveIdx )
+	{
+		update_node_image( gQueue[gActiveIdx] );
+	}
+} // Player::set_track()
 
 
 //
@@ -98,12 +116,5 @@ function update_player_controller()
 function next_track()
 {
 	// Increment track counter and update player list and controller
-	gActiveIdx += 1;
-	gPlayer.update_player();
-	
-	update_node_image( gQueue[gActiveIdx-1] );
-	if( gQueue.length > gActiveIdx )
-	{
-		update_node_image( gQueue[gActiveIdx] );
-	}
+	set_track( gActiveIdx + 1 );
 } // Player::next_track()

@@ -1,0 +1,4 @@
+CFBundleName = "Prerun Installer";
+CFBundleShortVersionString = "1.0";
+CFBundleGetInfoString = "Prerun Installer version 1.0 Copyright 2010 Zach Dicklin";
+NSHumanReadableCopyright = "Copyright 2010 Zach Dicklin.";

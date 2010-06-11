@@ -73,6 +73,9 @@ function queue_contains_coord( coord )
 //
 function is_node_active( coord )
 {
+	if( gQueue.length <= 0 )
+		return false;
+		
 	return ( coord.x == gQueue[gActiveIdx].x && coord.y == gQueue[gActiveIdx].y );
 } // is_node_active()
 

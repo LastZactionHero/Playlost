@@ -64,6 +64,22 @@ function get_connect_image_from_angle( angle, active )
 //
 function handle_node_click( x, y )
 {
+	// If this is the first node, allow
+	if( gQueue.length <= 0 )
+	{
+		// Add new node to the list
+		new_node = new Coord( x, y );
+		gQueue[gQueue.length] = new_node;
+		
+		// Change the node to the "queued" state
+		document.getElementById( get_node_id_from_coord( new_node ) ).style.backgroundImage = "url(images/node_active.png)";
+	
+		// Update player to contain new song
+		gPlayer.update_player_list();
+		gPlayer.update_player_controller();
+		return;
+	}
+	
 	// Make sure the coordinate is not already in the list
 	if( queue_contains_coord( new Coord( x, y ) ) )
 		return;
@@ -253,8 +269,8 @@ function draw_node()
 		 "<div id=\"" + get_node_id_from_coord( this.coord ) + "\" " + 
 		 "class=\"box_node\" style=\"background-image:" + node_image + "; " + 
 		 gen_position_string( position.x, position.y, this.width, this.height ) + "\">" +
-		 node_text + 
-		 "</div></a>"
+		 "</div>" + 
+		 "<div class=\"box_node_text\" style=\"" + gen_position_string( position.x, position.y + 5, this.width * 4, this.height ) + "\">" + node_text + "</div></a>"
 		 );
 } // Node::draw_node()
 

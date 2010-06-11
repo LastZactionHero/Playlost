@@ -11,6 +11,8 @@
 		5C7011EC11BC0689006EDDB7 /* player.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = player.js; path = scripts/player.js; sourceTree = "<group>"; };
 		5C75E7FF11BF216900C3FE06 /* globals.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = globals.js; path = scripts/globals.js; sourceTree = "<group>"; };
 		5C75E80011BF21B400C3FE06 /* utility.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = utility.js; path = scripts/utility.js; sourceTree = "<group>"; };
+		5CB4690711C07D7400F898FE /* prerun.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = prerun.rb; sourceTree = "<group>"; };
+		5CB4690911C08EF400F898FE /* testapp.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = testapp.rb; sourceTree = "<group>"; };
 		5CFAC64511BB48D800B529F3 /* playlost_viewer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = playlost_viewer.html; sourceTree = "<group>"; };
 		5CFAC64811BB493200B529F3 /* viewer.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = viewer.css; path = stylesheets/viewer.css; sourceTree = "<group>"; };
 		5CFAC74011BB6E8A00B529F3 /* playlist.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = playlist.js; path = scripts/playlist.js; sourceTree = "<group>"; };
@@ -35,6 +37,8 @@
 				5C7011EC11BC0689006EDDB7 /* player.js */,
 				5C75E7FF11BF216900C3FE06 /* globals.js */,
 				5C75E80011BF21B400C3FE06 /* utility.js */,
+				5CB4690711C07D7400F898FE /* prerun.rb */,
+				5CB4690911C08EF400F898FE /* testapp.rb */,
 			);
 			sourceTree = "<group>";
 		};

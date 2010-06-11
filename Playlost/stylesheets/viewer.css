@@ -1,6 +1,6 @@
 body 
   { 
-  background-color: #FFFFFF; 
+  background-color: #000000; 
   font-family: Verdana;
   }
   
@@ -17,7 +17,7 @@ body
 .box_viewer
   {
   position: absolute;
-  background-color: #DDDDDD;
+  background-color: #000000;
   overflow: scroll;
   z-index:0;
   }
@@ -25,8 +25,9 @@ body
 .box_player_list
   {
   position: absolute;
-  background-color: #DDDDDD;
-  overflow: scroll;
+  background-color: #000000;
+  overflow-y: scroll;
+  overflow-x: hidden;
   z-index:0;
   font-family: Verdana;
   font-size: 10px;
@@ -35,7 +36,7 @@ body
 .box_player_controller
   {
   position: absolute;
-  background-color: #DDDDDD;
+  background-color: #000000;
   overflow: hidden;
   z-index:0;
   font-family: Verdana;
@@ -49,7 +50,6 @@ body
   color: white;
   font-family: Verdana;
   font-size: 10px;
-  background-color: #AAAAAA;
   text-align: center;
   z-index:2;
   }
@@ -63,4 +63,14 @@ body
   font-size: 8px;
   text-align: center;
   z-index:3;
+  }
+  
+.box_node_text
+  {
+  position: absolute;
+  font-family: Verdana;
+  font-size: 10px;
+  color: white;
+  text-align: left;
+  z-index: 4;
   }
