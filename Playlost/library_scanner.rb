@@ -2,70 +2,133 @@
 
 require "rubygems"
 
-begin
-  gem "ruby-mp3info"
-rescue LoadError
-  puts "Could not find gem \"ruby-mp3info\"\n"
-  Process.exit
+
+# Replace Non Ascii Characters
+class String 
+  def remove_nonascii(replacement) 
+    n = self.split( "" ) 
+    self.slice!(0..self.size) 
+    n.each{ |b| 
+	  if b[0].to_i< 32 || b[0].to_i>127 || b[0].to_i == 34 then 
+	    self.concat(replacement) 
+	  else 
+	    self.concat(b) 
+      end 
+    } 
+    self.to_s 
+  end 
+end 
+
+
+# MP3 Tag Class
+class MP3_Tag
+  attr_accessor :title, :artist, :default
 end
 
-require "mp3info"
 
-class String 
-def remove_nonascii(replacement) 
-n=self.split("") 
-self.slice!(0..self.size) 
-n.each{|b| 
- if b[0].to_i< 32 || b[0].to_i>127 || b[0].to_i == 34 then 
-         self.concat(replacement) 
-         else 
-         self.concat(b) 
- end 
- } 
- self.to_s 
-end 
-end 
+# Extract MP3 tag information from a file
+def get_id3_tag( filename )
+  ret = MP3_Tag.new
+  
+  # Set up default value incase tag extraction fails
+  tag_default_start = filename.rindex( '/' )
+  tag_default_end = filename.length
+  tag_default = filename.slice( tag_default_start + 1, tag_default_end - tag_default_start - 5 )
+  ret.default = tag_default.remove_nonascii( '-' )
+  
+  # Extract tag
+  mp3_file = File.open( filename, "r" )
+  if mp3_file
+    file_length = mp3_file.stat.size
+	
+	if file_length > 128 
+	  # Read in last 128 bytes, ID3v1 Tag
+	  mp3_file.seek( -128, IO::SEEK_END )
+	  tag_string = mp3_file.read( 128 )
+      
+	  # Make sure the last part is actually a tag
+	  if( tag_string.size == 128 &&
+		  tag_string[0,3] == "TAG" )
+		  
+		# Extract artist and title
+	    tag_title = tag_string[3,30]
+		tag_artist = tag_string[33,30]
+		ret.title = tag_title.strip.remove_nonascii( '-' )
+		ret.artist = tag_artist.strip.remove_nonascii( '-' )
+	  end
 
-puts ARGV[0]
-pathEndIdx = ARGV[0].rindex('/')
-output_dir = ARGV[0].slice( 0, pathEndIdx )
+    end
+	
+    mp3_file.close()
+  end
+  
+  return ret
+end
+
+
+# Get output dir from path
+def get_output_dir( path )
+  ret = "."
+  
+  if ARGV[0]
+    path_end_idx = ARGV[0].rindex('/')
+    ret = ARGV[0].slice( 0, path_end_idx )
+  end
+  
+  return ret
+end
+
+
+
+# ----------------------------------------
+#
+# SCRIPT STARTS HERE
+#
+# ----------------------------------------
+puts "Playlost Library Scanner\n"
+
+# Determine script output path
+output_dir = get_output_dir( ARGV[0] )
 puts output_dir
 
-puts "Playlost Library Scanner\n"
+# Open autogen file for writing
 autogen_file = File.new( output_dir + "/scripts/autogen_playlist.js", "w+" )
-
-
-dir_base = Etc.getpwuid.dir + "/Music/"
-if( dir_base.nil? )
-  puts "Usage: library_scanner music_directory"
+if !autogen_file
+  puts "Could not create output file!\n"
   Process.exit
 end
 
-mp3_filename_array = Array.new()
+# Set to the "~/Music" directory
+dir_base = Etc.getpwuid.dir + "/Music/"
 
+# Directory and filename arrays
+mp3_filename_array = Array.new()
 dir_array = Array.new()
 dir_array << dir_base
 
+# Scan "~/Music" directory for MP3s
 dir_array.each{ |directory|
+  # Set Directory
   puts "Directory: " + directory + "\n"
   Dir.chdir( directory )
+  
+  # Get all files in directory
   files = Dir.glob( "*" )
 
+  # Check each file
   files.each { | file |
 	
-	# Check if files is a directory
+    # If file is a directory, add to directory list
 	if( File.directory?( file ) )
 	  full_dir_path = directory + file + "/"
-      puts "#{full_dir_path} is a directory\n"
 	  dir_array << full_dir_path
     end
 	
-	# Check if file is an mp3
+    # If file is MP3, add to MP3 List
 	filename_length = file.size
 	if( filename_length >= 5 )
 	  extension = file[ filename_length - 4, filename_length - 1 ]
 	  if( extension == ".mp3" )
-	    puts "#{file} is an mp3\n"
 		mp3_filename_array << directory + file
 	  end
 	end
@@ -81,50 +144,32 @@ dir_array.each{ |directory|
   mp3_filename_array[swap_idx] = temp
 }
 
-# Write to file
+# Write to file, header
 autogen_file.puts( "function Setup_Autogen_Song_Database()\n" )
 autogen_file.puts( "{\n" );
 autogen_file.puts( "this.list_length = #{mp3_filename_array.size};\n" )
 autogen_file.puts( "this.list = new Array( this.list_length );\n" )
 
 mp3_idx = 0;
-mp3_filename_array.each{ |mp3_filename|
-  puts "Trying: " + mp3_filename + "\n"
-  
-  mp3 = nil
-  album = ""
-  artist = ""
-  title = ""
-  filename = ""
-  
-  begin
-    mp3 = Mp3Info.open( mp3_filename , :encoding => 'utf-8')
-	album = mp3.tag.album
-	artist = mp3.tag.artist
-	title = mp3.tag.title
-	filename = mp3_filename
-  rescue
-    puts "Song Error! Skipping"
-  end
+mp3_count = mp3_filename_array.length
 
-  puts mp3_idx.to_s + " of " + mp3_filename_array.length.to_s + "\n"
-  puts "Title: #{title}\nArtist:#{artist}\nAlbum:#{album}\n\n\n"
+# Get MP3 tags and write to file
+mp3_filename_array.each{ |mp3_filename|
+  puts "Scanning #{mp3_idx.to_s} of #{mp3_count.to_s}: " + mp3_filename + "\n"
   
-  if album
-	album = album.remove_nonascii( '-' )
+  # Get Tag
+  tag = get_id3_tag( mp3_filename )
+  if !tag.title
+    tag.title = tag.default
   end
-  if artist
-	artist = artist.remove_nonascii( '-' )
-  end
-  if title
-	title = title	.remove_nonascii( '-' )
-  end
-  
-  autogen_file.puts( "this.list[#{mp3_idx}] = new Song( \"#{title}\", \"#{artist}\", \"#{filename}\" );\n" )
-  
-  mp3.close() if mp3
+  puts "Title: #{tag.title}\nArtist:#{tag.artist}\nDefault:#{tag.default}\n\n\n"
+
+  # Write to file  
+  autogen_file.puts( "this.list[#{mp3_idx}] = new Song( \"#{tag.title}\", \"#{tag.artist}\", \"#{mp3_filename}\" );\n" )
   
   mp3_idx += 1
 }
+
+# Write end of file
 autogen_file.puts( "}\n" )
 autogen_file.close()

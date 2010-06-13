@@ -212,9 +212,9 @@ function get_node_text()
 	{
 		node_text = this.song.name + "<br>" + this.song.artist;
 	}
-	else if( this.song.filename )
+	else if( this.song.name )
 	{
-		node_text = this.song.filename;
+		node_text = this.song.name;
 	}
 	
 	return node_text;

@@ -21,13 +21,13 @@
 	<key>Secure</key>
 	<false/>
 	<key>TextBackground</key>
-	<string>#ffffff</string>
+	<string>#000000</string>
 	<key>TextEncoding</key>
 	<integer>1</integer>
 	<key>TextFont</key>
 	<string>Monaco</string>
 	<key>TextForeground</key>
-	<string>#000000</string>
+	<string>#ffffff</string>
 	<key>TextSize</key>
 	<real>10</real>
 </dict>
