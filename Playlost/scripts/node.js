@@ -23,6 +23,16 @@ function Node( coord, viewport )
 	this.song = gPlaylist.get_song_at_coord( this.coord );
 } // Node
 
+server_img			= gServer + "images/";
+node_img_off		= "url( " + server_img + "node.png )";
+node_img_active		= "url( " + server_img + "node_active.png )";
+node_img_queued		= "url( " + server_img + "node_queued.png )";
+connect_img_120_off	= "url( " + server_img + "connect120.png )";
+connect_img_120_on	= "url( " + server_img + "connect120active.png )";
+connect_img_180_off	= "url( " + server_img + "connect180.png )";
+connect_img_180_on	= "url( " + server_img + "connect180active.png )";
+connect_img_240_on	= "url( " + server_img + "connect240.png )";
+connect_img_240_off	= "url( " + server_img + "connect240active.png )";
 
 //
 // Node::get_node_id_from_coord
@@ -46,7 +56,7 @@ function get_connect_id_from_angle( start_coord, angle )
 //
 function get_connect_image_from_angle( angle, active )
 {
-	connect_image = "url(images/connect" + angle;
+	connect_image = "url(" + server_img + "connect" + angle;
 	
 	if( active )
 	{
@@ -72,14 +82,14 @@ function handle_node_click( x, y )
 		gQueue[gQueue.length] = new_node;
 		
 		// Change the node to the "queued" state
-		document.getElementById( get_node_id_from_coord( new_node ) ).style.backgroundImage = "url(images/node_active.png)";
+		document.getElementById( get_node_id_from_coord( new_node ) ).style.backgroundImage = node_img_active;
 	
 		// Update player to contain new song
 		gPlayer.update_player_list();
 		gPlayer.update_player_controller();
 		return;
 	}
-	
+
 	// Make sure the coordinate is not already in the list
 	if( queue_contains_coord( new Coord( x, y ) ) )
 		return;
@@ -93,7 +103,7 @@ function handle_node_click( x, y )
 	gQueue[gQueue.length] = new_node;
 	
 	// Change the node to the "queued" state
-	document.getElementById( get_node_id_from_coord( new_node ) ).style.backgroundImage = "url(images/node_queued.png)";
+	document.getElementById( get_node_id_from_coord( new_node ) ).style.backgroundImage = node_img_queued;
 	
 	// Collect connection nodes
 	start_node = gQueue[ gQueue.length - 2 ];
@@ -228,15 +238,15 @@ function get_node_image( node_coord )
 	node_image = ""
 	if( is_node_active( node_coord ) )
 	{
-		node_image = "url(\'images/node_active.png\')"
+		node_image = node_img_active;
 	}
 	else if( queue_contains_coord( node_coord ) )
 	{
-		node_image = "url(\'images/node_queued.png\')"
+		node_image = node_img_queued;
 	}
 	else
 	{
-		node_image = "url(\'images/node.png\');"
+		node_image = node_img_off;
 	}
 	return node_image;
 } // Node::get_node_image()
@@ -261,7 +271,7 @@ function draw_node()
 
 	// Get node onscreen position
 	position = this.get_position_from_coord( this.coord );
-	
+
 	// Write node to screen
 	document.write
 		( 

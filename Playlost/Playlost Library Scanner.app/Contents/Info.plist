@@ -6,6 +6,22 @@
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
 	<string>Playlost Library Scanner</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>*</string>
+			</array>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>****</string>
+				<string>fold</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>Playlost Library Scanner</string>
 	<key>CFBundleGetInfoString</key>

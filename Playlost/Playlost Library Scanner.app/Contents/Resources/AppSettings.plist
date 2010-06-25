@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>AppPathAsFirstArg</key>
-	<true/>
+	<false/>
 	<key>Creator</key>
 	<string>Platypus-4.2</string>
 	<key>InterpreterParams</key>
 	<array/>
 	<key>IsDroppable</key>
-	<false/>
+	<true/>
 	<key>OutputType</key>
 	<string>Text Window</string>
 	<key>RemainRunningAfterCompletion</key>
@@ -17,7 +17,7 @@
 	<key>RequiresAdminPrivileges</key>
 	<false/>
 	<key>ScriptInterpreter</key>
-	<string>/usr/bin/ruby</string>
+	<string>/bin/sh</string>
 	<key>Secure</key>
 	<false/>
 	<key>TextBackground</key>

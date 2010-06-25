@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		5C4EE3C811C52D1600BC59DF /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		5C7011D511BC01A8006EDDB7 /* autogen_playlist.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = autogen_playlist.js; path = scripts/autogen_playlist.js; sourceTree = "<group>"; };
 		5C7011EC11BC0689006EDDB7 /* player.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = player.js; path = scripts/player.js; sourceTree = "<group>"; };
 		5C75E7FF11BF216900C3FE06 /* globals.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = globals.js; path = scripts/globals.js; sourceTree = "<group>"; };
 		5C75E80011BF21B400C3FE06 /* utility.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = utility.js; path = scripts/utility.js; sourceTree = "<group>"; };
+		5CD3585D11C5E24500D315D3 /* library_scanner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = library_scanner.cpp; sourceTree = "<group>"; };
 		5CFAC64511BB48D800B529F3 /* playlost_viewer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = playlost_viewer.html; sourceTree = "<group>"; };
 		5CFAC64811BB493200B529F3 /* viewer.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = viewer.css; path = stylesheets/viewer.css; sourceTree = "<group>"; };
 		5CFAC74011BB6E8A00B529F3 /* playlist.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = playlist.js; path = scripts/playlist.js; sourceTree = "<group>"; };
@@ -24,6 +26,7 @@
 		5CFAC63A11BB48BC00B529F3 = {
 			isa = PBXGroup;
 			children = (
+				5C4EE3C811C52D1600BC59DF /* index.html */,
 				5C7011D511BC01A8006EDDB7 /* autogen_playlist.js */,
 				5CFAC64511BB48D800B529F3 /* playlost_viewer.html */,
 				5CFAC64811BB493200B529F3 /* viewer.css */,
@@ -35,6 +38,7 @@
 				5C7011EC11BC0689006EDDB7 /* player.js */,
 				5C75E7FF11BF216900C3FE06 /* globals.js */,
 				5C75E80011BF21B400C3FE06 /* utility.js */,
+				5CD3585D11C5E24500D315D3 /* library_scanner.cpp */,
 			);
 			sourceTree = "<group>";
 		};

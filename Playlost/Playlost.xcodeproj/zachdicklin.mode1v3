@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -269,12 +271,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
+									<integer>13</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 604}}</string>
+							<string>{{0, 0}, {186, 593}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -286,14 +288,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {203, 622}}</string>
+						<string>{{0, 0}, {203, 611}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 115 1280 663 0 0 1280 778 </string>
+						<string>0 126 884 652 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -304,14 +306,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Playlost Viewer.html</string>
+								<string>library_scanner.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -319,28 +319,29 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Playlost Viewer.html</string>
+										<string>library_scanner.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5CECE39D11C48F97003B3F32</string>
+										<string>5CD3586011C5E4C900D315D3</string>
 										<key>history</key>
 										<array>
 											<string>5CFAC7FF11BB8BE400B529F3</string>
 											<string>5C70122911BC0BDB006EDDB7</string>
 											<string>5C75E80C11BF246800C3FE06</string>
-											<string>5CE752CC11BF4FF9008E3AC8</string>
-											<string>5CE752EE11BF55A6008E3AC8</string>
 											<string>5C6024E011C1E91C000B9106</string>
 											<string>5C6024E111C1E91C000B9106</string>
 											<string>5C6024E211C1E91C000B9106</string>
-											<string>5C6024E511C1E91C000B9106</string>
-											<string>5C6024E711C1E91C000B9106</string>
-											<string>5C6024E811C1E91C000B9106</string>
-											<string>5C6024E911C1E91C000B9106</string>
-											<string>5CECE39911C48F97003B3F32</string>
-											<string>5CECE39A11C48F97003B3F32</string>
-											<string>5CECE39B11C48F97003B3F32</string>
+											<string>5CECE3A611C49F62003B3F32</string>
+											<string>5CECE3A711C49F62003B3F32</string>
+											<string>5CECE3A911C49F62003B3F32</string>
+											<string>5C00227811C4AD3800559B7D</string>
+											<string>5C00227911C4AD3800559B7D</string>
+											<string>5C00228011C4AE0400559B7D</string>
+											<string>5CD884B511C4B41F006E2F9C</string>
+											<string>5C4EE3C911C532A700BC59DF</string>
+											<string>5CD3585E11C5E4C900D315D3</string>
+											<string>5CD3585F11C5E4C900D315D3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -352,14 +353,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1072, 617}}</string>
+								<string>{{0, 0}, {676, 606}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 115 1280 663 0 0 1280 778 </string>
+								<string>0 126 884 652 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>617pt</string>
+							<string>606pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -372,9 +373,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 622}, {1072, 0}}</string>
+								<string>{{0, 611}, {676, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 115 1280 663 0 0 1280 778 </string>
+								<string>0 126 884 652 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -383,7 +384,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1072pt</string>
+					<string>676pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -398,9 +399,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>5CECE39F11C48F97003B3F32</string>
+				<string>5CD3585A11C5E22F00D315D3</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>5CECE3A011C48F97003B3F32</string>
+				<string>5CD3585B11C5E22F00D315D3</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -541,7 +542,7 @@
 		<string>/Users/zachdicklin/Development/Playlost0.1/Playlost/Playlost.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 115 1280 663 0 0 1280 778 </string>
+	<string>0 126 884 652 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

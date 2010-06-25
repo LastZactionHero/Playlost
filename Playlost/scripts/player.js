@@ -79,14 +79,15 @@ function update_player_list()
 //
 function set_track( track_idx )
 {
+	// Set the active track
 	gActiveIdx = track_idx;
   
 	gPlayer.update_player();
 	
-	update_node_image( gQueue[gActiveIdx-1] );
-	if( gQueue.length > gActiveIdx )
+	// Update node images
+	for( i = 0; i <gQueue.length; i++ )
 	{
-		update_node_image( gQueue[gActiveIdx] );
+		update_node_image( gQueue[i] );
 	}
 } // Player::set_track()
 

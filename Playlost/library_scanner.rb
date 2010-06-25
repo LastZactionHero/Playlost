@@ -155,14 +155,14 @@ mp3_count = mp3_filename_array.length
 
 # Get MP3 tags and write to file
 mp3_filename_array.each{ |mp3_filename|
-  puts "Scanning #{mp3_idx.to_s} of #{mp3_count.to_s}: " + mp3_filename + "\n"
+  puts "Scanning #{(mp3_idx + 1).to_s } of #{mp3_count.to_s}: " + mp3_filename + "\n"
   
   # Get Tag
   tag = get_id3_tag( mp3_filename )
   if !tag.title
     tag.title = tag.default
   end
-  puts "Title: #{tag.title}\nArtist:#{tag.artist}\nDefault:#{tag.default}\n\n\n"
+  puts "Title: #{tag.title}\nArtist:#{tag.artist}\n\n\n"
 
   # Write to file  
   autogen_file.puts( "this.list[#{mp3_idx}] = new Song( \"#{tag.title}\", \"#{tag.artist}\", \"#{mp3_filename}\" );\n" )
@@ -173,3 +173,7 @@ mp3_filename_array.each{ |mp3_filename|
 # Write end of file
 autogen_file.puts( "}\n" )
 autogen_file.close()
+
+puts "***Scan Complete!***\n"
+puts "Open Playlost Viewer in your browser to begin.\n"
+puts "Run this script again after adding new music to your library.\n"
