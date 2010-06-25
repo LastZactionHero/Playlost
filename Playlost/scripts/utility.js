@@ -87,3 +87,69 @@ function is_even( value )
 {
 	return ( value / 2 ) == parseInt( ( value / 2 ) )
 }
+
+
+//
+// Detect Current Browser
+//
+function browser_detect()
+{
+	browser = "Unknown";
+	
+	if( navigator.userAgent.indexOf( "Firefox" ) != -1 )
+	{
+		browser = "Firefox";
+	}
+	else if( navigator.userAgent.indexOf( "Chrome" ) != -1 )
+	{
+		browser = "Chrome";
+	}
+	else if( navigator.userAgent.indexOf( "Internet Explorer" ) != -1 )
+	{
+		browser = "Internet Explorer";
+	}
+	else if( navigator.userAgent.indexOf( "Safari" ) != -1 )
+	{
+		browser = "Safari";
+	}
+
+	return browser;
+} // browser_detect()
+
+
+//
+// Does this current browser support HTML5
+// MP3 Audio?
+//
+function use_html5_audio()
+{
+	browser = browser_detect();
+	if( browser == "Chrome" || browser == "Safari" ) return true;
+	return false;
+}
+
+
+//
+// Quicktime Player Track Ended Callback
+//
+function quicktime_player_ended_callback()
+{
+	document.getElementById( 'div_playlist_player' ).innerHTML = "";
+	next_track();
+} // quicktime_player_ended_callback()
+
+
+//
+// Register for Quicktime Player callbacks
+//
+function register_quicktime_player()
+{
+	if( document.getElementById( "quicktime_audio_player" ) )
+	{ 
+		document.getElementById( "quicktime_audio_player" ).addEventListener( 'qt_ended', quicktime_player_ended_callback, false ); 
+	}
+	else
+	{
+		setTimeout( "register_quicktime_player()", 500 );
+	}
+} // register_quicktime_player()

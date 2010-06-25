@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -276,7 +274,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 593}}</string>
+							<string>{{0, 0}, {186, 578}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -288,14 +286,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {203, 611}}</string>
+						<string>{{0, 0}, {203, 596}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 126 884 652 0 0 1280 778 </string>
+						<string>42 141 884 637 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -306,6 +304,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -323,7 +323,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5CD3586011C5E4C900D315D3</string>
+										<string>5C6A5B3D11D4456200B845B4</string>
 										<key>history</key>
 										<array>
 											<string>5CFAC7FF11BB8BE400B529F3</string>
@@ -341,7 +341,7 @@
 											<string>5CD884B511C4B41F006E2F9C</string>
 											<string>5C4EE3C911C532A700BC59DF</string>
 											<string>5CD3585E11C5E4C900D315D3</string>
-											<string>5CD3585F11C5E4C900D315D3</string>
+											<string>5CD3586011C5E4C900D315D3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -353,14 +353,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {676, 606}}</string>
+								<string>{{0, 0}, {676, 591}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 126 884 652 0 0 1280 778 </string>
+								<string>42 141 884 637 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>606pt</string>
+							<string>591pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -373,9 +373,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 611}, {676, 0}}</string>
+								<string>{{0, 596}, {676, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 126 884 652 0 0 1280 778 </string>
+								<string>42 141 884 637 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -399,9 +399,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>5CD3585A11C5E22F00D315D3</string>
+				<string>5C6A5B3E11D4456200B845B4</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>5CD3585B11C5E22F00D315D3</string>
+				<string>5C6A5B3F11D4456200B845B4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -542,7 +542,7 @@
 		<string>/Users/zachdicklin/Development/Playlost0.1/Playlost/Playlost.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 126 884 652 0 0 1280 778 </string>
+	<string>42 141 884 637 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

@@ -103,10 +103,27 @@ function update_player_controller()
 		filename = gPlaylist.get_song_at_coord( gQueue[gActiveIdx] ).filename;
 		
 		// Generate player html
-		player_html = "<audio style=\"top:0px;\" src=\"" + filename + "\" autoplay=\"true\" onended=\"javascript:next_track()\" controls=\"controls\">Your browser does not support the audio element.</audio>";
+		player_html = "";
+		
+		if( use_html5_audio() )
+		{
+			player_html = "<audio style=\"top:0px;\" src=\"" + filename + "\" autoplay=\"true\" onended=\"javascript:next_track()\" controls=\"controls\">Your browser does not support the audio element.</audio>";
+		}
+		else
+		{
+			player_html = "<object classid=\"clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B\" codebase=\"http://www.apple.com/qtactivex/qtplugin.cab\">";
+			player_html += "<embed id=\"quicktime_audio_player\" postdomevents=\"true\" src=\"" + filename + "\" width=\"" + this.width + "\" height=\"15\" autoplay=\"true\" style=\"behavior:url(#qt_event_source);\" controller=\"true\" pluginspage=\"http://www.apple.com/quicktime/download/\"></embed>";
+			player_html += "</object>";
+		}
 		
 		// Update div
 		document.getElementById( 'div_playlist_player' ).innerHTML = player_html;
+		
+		// Register quicktime player if not using HTML5 audio
+		if( !use_html5_audio() )
+		{
+			register_quicktime_player();
+		}
 	}
 } // Player::update_player_controller()
 
