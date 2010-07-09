@@ -269,7 +269,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
+									<integer>10</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -311,7 +311,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>library_scanner.cpp</string>
+								<string>2. Library Viewer.html</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -319,29 +319,32 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>library_scanner.cpp</string>
+										<string>2. Library Viewer.html</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5C6A5B3D11D4456200B845B4</string>
+										<string>5C6A5B5811D4545900B845B4</string>
 										<key>history</key>
 										<array>
 											<string>5CFAC7FF11BB8BE400B529F3</string>
-											<string>5C70122911BC0BDB006EDDB7</string>
-											<string>5C75E80C11BF246800C3FE06</string>
 											<string>5C6024E011C1E91C000B9106</string>
-											<string>5C6024E111C1E91C000B9106</string>
 											<string>5C6024E211C1E91C000B9106</string>
-											<string>5CECE3A611C49F62003B3F32</string>
-											<string>5CECE3A711C49F62003B3F32</string>
-											<string>5CECE3A911C49F62003B3F32</string>
-											<string>5C00227811C4AD3800559B7D</string>
-											<string>5C00227911C4AD3800559B7D</string>
-											<string>5C00228011C4AE0400559B7D</string>
-											<string>5CD884B511C4B41F006E2F9C</string>
 											<string>5C4EE3C911C532A700BC59DF</string>
-											<string>5CD3585E11C5E4C900D315D3</string>
-											<string>5CD3586011C5E4C900D315D3</string>
+											<string>5C6A5B4511D4545900B845B4</string>
+											<string>5C6A5B4611D4545900B845B4</string>
+											<string>5C6A5B4811D4545900B845B4</string>
+											<string>5C6A5B4A11D4545900B845B4</string>
+											<string>5C6A5B4C11D4545900B845B4</string>
+											<string>5C6A5B4D11D4545900B845B4</string>
+											<string>5C6A5B4E11D4545900B845B4</string>
+											<string>5C6A5B4F11D4545900B845B4</string>
+											<string>5C6A5B5011D4545900B845B4</string>
+											<string>5C6A5B5111D4545900B845B4</string>
+											<string>5C6A5B5211D4545900B845B4</string>
+											<string>5C6A5B5311D4545900B845B4</string>
+											<string>5C6A5B5411D4545900B845B4</string>
+											<string>5C6A5B5511D4545900B845B4</string>
+											<string>5C6A5B5611D4545900B845B4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
