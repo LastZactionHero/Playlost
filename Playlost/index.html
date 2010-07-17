@@ -4,7 +4,33 @@
   </head>
 
   <script type="text/javascript">
-  
+
+	function startup()
+	{
+		windowWidth = window.innerWidth;
+		windowHeight = window.innerHeight;
+
+		width = 800;
+		height = 500;
+		top = 50;
+		left = ( windowWidth - width ) / 2;
+
+		htmlString = "";
+		htmlString += "<map name=\"main\"><area shape=\"rect\" coords=\"600,400,775,450\" href=\"Playlost.zip\"></map>";
+		htmlString += "<div style=\"position:absolute; top:50px; left:" + left + "px; width:" + width + "px; height:" + height + "px;\">";
+		htmlString += "<img src=\"images/index-background.jpg\" USEMAP=\"#main\">";
+		htmlString += "<br><center><p style=\"color:white; font-family:Verdana; font-size:10px;\"><a onclick=\"javascript:feedback()\">Unfettered Praise / Personal Attacks</a></p></center>";
+		htmlString += "</div>";
+		
+		video_left = left+8;
+		htmlString += "<div style=\"position:absolute; overflow:hidden; top:150px; left:" + video_left + "px; width:560px; height:400px;\">";
+		//htmlString += "<object width=\"480\" height=\"385\"><param name=\"movi\" value=\"http://www.youtube.com/v/o1BfBWK4MxE&amp;hl=en_US&amp;fs=1;\"></param><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\" value=\"always\"></param><embed src=\"http://www.youtube.com/v/o1BfBWK4MxE&amp;hl=en_US&amp;autoplay=1;&amp;fs=1\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"480\" height=\"385\"></embed></object>";
+		htmlString += "<object width=\"400\" height=\"300\"><param name=\"allowfullscreen\" value=\"true\" /><param name=\"allowscriptaccess\" value=\"always\" /><param name=\"movie\" value=\"http://vimeo.com/moogaloop.swf?clip_id=13384008&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1\" /><embed src=\"http://vimeo.com/moogaloop.swf?clip_id=13384008&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1\" type=\"application/x-shockwave-flash\" allowfullscreen=\"true\" allowscriptaccess=\"always\" width=\"560\" height=\"395\"></embed></object>";
+		htmlString += "</div>";
+		//document.write( htmlString );
+		document.getElementById( "id_content_div" ).innerHTML = htmlString;
+	}
+	
 	function feedback()
 	{
 	  email = "mailto:" + "zdicklin" + "@" + "gmail.com";
@@ -16,15 +42,8 @@
 	
   </script>
   
-  <body bgcolor="black">
-  
-	<map name="main">
-	  <area shape="rect" coords="600,400,775,450" href="Playlost.zip">
-	</map>
+  <body bgcolor="black" onload="javascript:startup()">
 	
-    <center>
-	  <img src="images/index-background.jpg" USEMAP="#main"><br>
-	  <p style="color:white; font-family:Verdana; font-size:10	px;"><a onclick="javascript:feedback()">Unfettered Praise / Personal Attacks</a></p>
-	</center
+	<div id="id_content_div"><div>
   </body>
 </html>

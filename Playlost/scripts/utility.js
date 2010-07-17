@@ -117,6 +117,26 @@ function browser_detect()
 } // browser_detect()
 
 
+// 
+// OS Detect
+//
+function os_detect()
+{
+	os = "Unknown";
+  
+	if( navigator.userAgent.indexOf( "Macintosh" ) != -1 )
+	{
+		os = "Mac";
+	}
+	else if( navigator.userAgent.indexOf( "Windows" ) != -1 )
+	{
+		os = "Windows";
+	}
+	
+	return os;
+} // os_detect()
+
+
 //
 // Does this current browser support HTML5
 // MP3 Audio?
@@ -153,3 +173,21 @@ function register_quicktime_player()
 		setTimeout( "register_quicktime_player()", 500 );
 	}
 } // register_quicktime_player()
+
+
+//
+// Browser Warning
+// Send incompatible browser warnings
+function browser_warning()
+{
+	browser = browser_detect();
+	os = os_detect();
+
+	if( os != "Mac" )
+	{
+		if( browser != "Chrome" && browser != "Safari" )
+		{
+			alert( "Warning: Playlost only supports Google Chrome or Apple Safari on your platform." );
+		}
+	}
+} // browser_warning()

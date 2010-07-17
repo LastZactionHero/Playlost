@@ -1,11 +1,10 @@
 <html>
 	<head>
-		<title>Playlost Viewer 0.4b</title>
+		<title>Playlost Viewer</title>
 		
 		
 		<script type="text/javascript" src="scripts/autogen_playlist.js"></script>
 		
-		<!--
 		<link rel="stylesheet" type="text/css" href="stylesheets/viewer.css">
 		<script type="text/javascript" src="scripts/globals.js"></script>
 		<script type="text/javascript" src="scripts/coord.js"></script>
@@ -14,8 +13,8 @@
 		<script type="text/javascript" src="scripts/player.js"></script>
 		<script type="text/javascript" src="scripts/utility.js"></script>
 		<script type="text/javascript" src="scripts/node.js"></script>	
-		-->
-		
+
+		<!--
 		<link rel="stylesheet" type="text/css" href="http://www.allweapons.net/Playlost/stylesheets/viewer.css">
 		<script type="text/javascript" src="http://www.allweapons.net/Playlost/scripts/globals.js"></script>
 		<script type="text/javascript" src="http://www.allweapons.net/Playlost/scripts/coord.js"></script>
@@ -24,6 +23,7 @@
 		<script type="text/javascript" src="http://www.allweapons.net/Playlost/scripts/player.js"></script>
 		<script type="text/javascript" src="http://www.allweapons.net/Playlost/scripts/utility.js"></script>
 		<script type="text/javascript" src="http://www.allweapons.net/Playlost/scripts/node.js"></script>	
+		-->
 		
 		<script type="text/javascript">
 			
@@ -32,9 +32,9 @@
 			//
 			function startup()
 			{
+				browser_warning();
 				gPlaylist = new Playlist();
 				gQueue = new Array();
-				//gQueue[0] = new Coord(0, 0);
 				gViewport = new Viewport();
 				gViewport.draw_viewport();
 				gPlayer = new Player();

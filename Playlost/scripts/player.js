@@ -10,7 +10,7 @@ function Player()
 	this.update_player_controller = update_player_controller;
 	
 	// Variables
-	this.top = 20;
+	this.top = 10;
 	this.left = gViewport.left + gViewport.width + 20;
 	this.width = window.innerWidth - this.left - 36;
 	this.height = window.innerHeight - 40 - 40;

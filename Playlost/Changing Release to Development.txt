@@ -1,0 +1,2 @@
+1. globals.js: Change Server
+2. 2. Library Viewer.html: Change includes
