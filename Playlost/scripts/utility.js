@@ -187,7 +187,7 @@ function browser_warning()
 	{
 		if( browser != "Chrome" && browser != "Safari" )
 		{
-			alert( "Warning: Playlost only supports Google Chrome or Apple Safari on your platform." );
+			alert( "Warning: Playlost uses Flash on in your browser. Flash may yell at you about a security warning. When it does, click \"Setting\", grant permissions, and restart your browser." );
 		}
 	}
 } // browser_warning()

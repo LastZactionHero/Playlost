@@ -13,6 +13,7 @@
 		5C75E7FF11BF216900C3FE06 /* globals.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = globals.js; path = scripts/globals.js; sourceTree = "<group>"; };
 		5C75E80011BF21B400C3FE06 /* utility.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = utility.js; path = scripts/utility.js; sourceTree = "<group>"; };
 		5C99BE3B11F13B9300C2719D /* 2. Library Viewer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "2. Library Viewer.html"; sourceTree = "<group>"; };
+		5CE478D811F3860A00A21646 /* niftyplayer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = niftyplayer.js; path = scripts/niftyplayer.js; sourceTree = "<group>"; };
 		5CFAC64811BB493200B529F3 /* viewer.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = viewer.css; path = stylesheets/viewer.css; sourceTree = "<group>"; };
 		5CFAC74011BB6E8A00B529F3 /* playlist.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = playlist.js; path = scripts/playlist.js; sourceTree = "<group>"; };
 		5CFAC74E11BB726800B529F3 /* coord.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = coord.js; path = scripts/coord.js; sourceTree = "<group>"; };
@@ -31,6 +32,7 @@
 				5CFAC74011BB6E8A00B529F3 /* playlist.js */,
 				5CFAC74E11BB726800B529F3 /* coord.js */,
 				5CFAC77E11BB7A4B00B529F3 /* viewport.js */,
+				5CE478D811F3860A00A21646 /* niftyplayer.js */,
 				5CFAC78511BB7A9700B529F3 /* node.js */,
 				5C7011EC11BC0689006EDDB7 /* player.js */,
 				5C75E7FF11BF216900C3FE06 /* globals.js */,

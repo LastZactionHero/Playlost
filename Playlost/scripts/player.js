@@ -8,6 +8,7 @@ function Player()
 	this.update_player = update_player;
 	this.update_player_list = update_player_list;
 	this.update_player_controller = update_player_controller;
+	this.poll_flash_finished = poll_flash_finished;
 	
 	// Variables
 	this.top = 10;
@@ -104,15 +105,31 @@ function update_player_controller()
 		
 		// Generate player html
 		player_html = "";
+		register_quicktime = false;
 		
 		if( use_html5_audio() )
-		{
+		{	
+			// Use HTML5 Audio
 			player_html = "<audio style=\"top:0px;\" src=\"" + filename + "\" autoplay=\"true\" onended=\"javascript:next_track()\" controls=\"controls\">Your browser does not support the audio element.</audio>";
+		}
+		else if( os_detect() == "Mac" && browser_detect() == "Firefox" )
+		{
+			// Use Quicktime
+			player_html = "<object classid=\"clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B\" codebase=\"http://www.apple.com/qtactivex/qtplugin.cab\">";
+			player_html += "<embed id=\"quicktime_audio_player\" postdomevents=\"true\" src=\"" + filename + "\" width=\"" + this.width + "\" height=\"15\" autoplay=\"true\" style=\"behavior:url(#qt_event_source);\" controller=\"true\" pluginspage=\"http://www.apple.com/quicktime/download/\"></embed>";
+			player_html += "</object>";
+			
+			register_quicktime = true;
 		}
 		else
 		{
-			player_html = "<object classid=\"clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B\" codebase=\"http://www.apple.com/qtactivex/qtplugin.cab\">";
-			player_html += "<embed id=\"quicktime_audio_player\" postdomevents=\"true\" src=\"" + filename + "\" width=\"" + this.width + "\" height=\"15\" autoplay=\"true\" style=\"behavior:url(#qt_event_source);\" controller=\"true\" pluginspage=\"http://www.apple.com/quicktime/download/\"></embed>";
+			// Use Flash
+			player_html += "<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0\" width=\"165\" height=\"37\" id=\"flash_player\" align=\"\">";
+			player_html += "	<param name=movie value=\"scripts/niftyplayer.swf?file=" + filename + "&as=1\">";
+			player_html += "	<param name=quality value=high>";
+			player_html += "	<param name=bgcolor value=#FFFFFF>";
+			player_html += "	<embed src=\"scripts/niftyplayer.swf?file=" + filename + "&as=1\" quality=high bgcolor=#FFFFFF width=\"165\" height=\"37\" name=\"flash_player\" align=\"\" type=\"application/x-shockwave-flash\" swLiveConnect=\"true\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">";
+			player_html += "	</embed>";
 			player_html += "</object>";
 		}
 		
@@ -120,13 +137,34 @@ function update_player_controller()
 		document.getElementById( 'div_playlist_player' ).innerHTML = player_html;
 		
 		// Register quicktime player if not using HTML5 audio
-		if( !use_html5_audio() )
+		if( register_quicktime )
 		{
 			register_quicktime_player();
 		}
+		
+		this.poll_flash_finished();
 	}
 } // Player::update_player_controller()
 
+
+//
+// Poll for flash player finished state
+function poll_flash_finished()
+{
+	// If the player exists and is finished, forward
+	// to the next track
+	if( document.getElementById( "flash_player" ) &&
+		niftyplayer('flash_player') &&
+		niftyplayer('flash_player').getState() == "finished" )
+	{
+		next_track();
+	}
+	else
+	{
+		// Poll again
+		setTimeout( "poll_flash_finished()", 2000 );
+	}
+} // Player::poll_flash_finished()
 
 //
 // Player::next_track
